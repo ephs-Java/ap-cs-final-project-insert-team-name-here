@@ -3,7 +3,8 @@
 
 Servo myservo1; //creates servo object for base servo
 Servo myservo2; //creates servo object for top servo
-
+int k = 1;
+int z = 0;
 
 void setup() {
   myservo1.attach(9);  //attaches base servo to pin 9
@@ -12,33 +13,164 @@ void setup() {
 }
 
 void hitkey(){ // move the top servo up and down quickly to hit a key
-myservo2.write(90); 
+myservo2.write(0); 
     delay(100);
-myservo2.write(0);
-    delay(100);
+myservo2.write(25);
+    delay(50);
+    delay(300);
 }
 void playkeyone(){ //moves the base servo to the first key and hits the key
 myservo1.write(0);
-delay(500); 
+if(z == 180){ //fixes an issue where the mallet went early
+delay(600);
+}
+else if(z == 135){//fixes an issue where the mallet went early
+  delay(500);
+}
+else{
+  delay(300); 
+}
    hitkey();
+    z = 0;
 }
 void playkeytwo(){ //moves the base servo to the second key and hits the key
 myservo1.write(45);
-delay(500);
+if(z == 180){//fixes an issue where the mallet went early
+  delay(500);
+}
+else{
+delay(300); 
+}
+
   hitkey();
+  z = 45;
 }
 void playkeythree(){ //moves the base servo to the third key and hits the key
 myservo1.write(90);
-delay(500);
+delay(300);
   hitkey();
+  z = 90;
+}
+void playkeyfour(){ //moves the base servo to the fourth key and hits the key
+myservo1.write(135);//fixes an issue where the mallet went early
+if(z == 0){
+  delay(500);
+}
+else{
+delay(300); 
+}
+   hitkey();
+   z = 135;
+}
+void playkeyfive(){ //moves the base servo to the fifth key and hits the key
+
+myservo1.write(180);
+if(z == 0){//fixes an issue where the mallet went early
+delay(600);
+}
+else if(z == 45){//fixes an issue where the mallet went early
+  delay(500);
+}
+else{
+  delay(300); 
+}
+   hitkey();
+   z = 180;
+}
+
+
+void rest(){ //waits for one second/note
+delay(1000);
+  
+}
+void bootup(){ // fixes an issue where the first key is skipped
+  if(k > 0){
+    myservo2.write(25);
+    delay(500);
+    k = 0;
+  }
+ 
 }
 
 void loop() { //goes in a continues loop, playing the inputted key playing bits
+ 
+    bootup();
+    playall();
+    
+    //buns();
+   // littlelamb();
+    
+     //https://oscarliang.com/wii-nunchuck-arduino-tutorial/
+     //https://playground.arduino.cc/Main/WiiChuckClass
+}
+
+void playall(){
+    playkeyone();
+    playkeytwo();
+    playkeythree();
+    playkeyfour();
+    playkeyfive();
+    playkeyfour();
+    playkeythree();
+    playkeytwo();
+}
+void buns(){ //plays hot cross buns
+  playkeyone();
+  playkeytwo();
+  playkeythree();
+  rest();
   
+  playkeyone();
+  playkeytwo();
+  playkeythree();
+  rest();
+  
+  playkeythree();
+  playkeythree();
+  playkeythree();
+  playkeythree();
+  
+  playkeytwo();
+  playkeytwo();
+  playkeytwo();
+  playkeytwo();
+  
+  playkeyone();
+  playkeytwo();
+  playkeythree();
+  rest();
+}
+
+void littlelamb(){ //plays mary had a little lamb
+  playkeyone();
+    playkeytwo();
+    playkeythree();
+    playkeytwo();
+    playkeyone();
+    playkeyone();
+    playkeyone();
+    rest();
+    playkeytwo();
+    playkeytwo();
+    playkeytwo();
+    rest();
+    playkeyone();
+    playkeyone();
+    playkeyone();
+    rest();
     playkeyone();
     playkeytwo();
     playkeythree();
     playkeytwo();
-    
+    playkeyone();
+    playkeyone();
+    playkeyone();
+    playkeyone();
+    playkeytwo();
+    playkeytwo();
+    playkeyone();
+    playkeytwo();
+    playkeythree();
+    rest();
 }
 
