@@ -162,12 +162,13 @@ void loop() { //goes in a continues loop, playing the inputted key playing bits
  
     bootup();
 
-  //testallcombo();
-  //k1();
+  testallcombo();
+
    //kall();
-  
-    buns();
-   // littlelamb();
+
+  //rowboat();  
+  //  buns();
+    //littlelamb();
     
      //https://oscarliang.com/wii-nunchuck-arduino-tutorial/
      //https://playground.arduino.cc/Main/WiiChuckClass
@@ -246,79 +247,121 @@ void testallcombo(){ //tests all possible combinations
 }
 void kall(){
   k1();
+  //rest();
   k2();
+  //rest();
   k3();
+  //rest();
   k4();
+  //rest();
   k5();
+  //rest();
   k6();
+  //rest();
   k7();
+  //rest();
   k8();
+  //rest();
   k7();
+  //rest();
   k6();
+  //rest();
   k5();
+  //rest();
   k4();
+  //rest();
   k3();
+  //rest();
   k2();
-  
+  //rest();
 }
 
 void buns(){ //plays hot cross buns on first three keys
-  k1();
   k2();
   k3();
+  k4();
   rest();
   
-  k1();
   k2();
   k3();
+  k4();
   rest();
   
+  k4();
+  k4();
+  k4();
+  k4();
+  
   k3();
   k3();
   k3();
   k3();
   
   k2();
-  k2();
-  k2();
-  k2();
-  
-  k1();
-  k2();
   k3();
+  k4();
   rest();
 }
 
 void littlelamb(){ //plays mary had a little lamb on first three keys
-    k1();
     k2();
     k3();
-    k2();
-    k1();
-    k1();
-    k1();
-    rest();
-    k2();
-    k2();
-    k2();
-    rest();
-    k1();
-    k1();
-    k1();
-    rest();
-    k1();
-    k2();
+    k4();
     k3();
     k2();
-    k1();
-    k1();
-    k1();
-    k1();
     k2();
     k2();
-    k1();
-    k2();
+    rest();
+    k3();
+    k3();
     k3();
     rest();
+    k2();
+    k2();
+    k2();
+    rest();
+    k2();
+    k3();
+    k4();
+    k3();
+    k2();
+    k2();
+    k2();
+    k2();
+    k3();
+    k3();
+    k2();
+    k3();
+    k4();
+    rest();
+}
+
+void rowboat(){// plays rowboat song
+  
+k8();
+k8();
+k8();
+k7();
+k6();
+k6();
+k7();
+k6();
+k5();
+k4();
+k1();
+k1();
+k4();
+k4();
+k6();
+k6();
+k8();
+k8();
+k4();
+k5();
+k6();
+k7();
+k8();
+rest();
+
 }
 
